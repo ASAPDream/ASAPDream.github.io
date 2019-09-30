@@ -1,0 +1,52 @@
+<!doctype html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cookie&display=swap" rel="stylesheet">
+    <body>
+        <h1 id="loading" align="center">夢<br>Dream</h1>
+         </body>
+         <script>
+         var bounceUp = anime({
+  autoplay: false, 
+  targets:  '#loading', 
+  translateY: {
+  value:    ['300px', '0px'], 
+    duration: 1000,
+    easing:   'easeOutQuad',
+  },
+  complete:  function(){ bounceDown.restart() }, 
+});
+
+var bounceDown = anime({
+  autoplay: false,  
+  targets:  '#loading',
+  translateY: {
+    value:    ['0px', '300px'], 
+    duration: 1000,
+    easing:   'easeInQuad',
+  },
+  complete:  function(){ bounceUp.restart() }, 
+});
+
+bounceDown.play(); 
+
+window.setTimeout(function(){
+
+
+window.location.href = "Main.html";
+alert("Now being directed to Main Site")
+}, 5000);
+              
+         </script>
+
+         <style>
+          body{
+              background-color: black;
+          }
+          h1{
+            color: azure;
+            font-size: 80px;
+            font-family: 'Cookie', cursive;
+          }
+         </style>
+</head>
